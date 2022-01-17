@@ -1,4 +1,4 @@
-pakage book;
+package book;
 public class BookEx11 {
 
 public static void main(String[] args) {
