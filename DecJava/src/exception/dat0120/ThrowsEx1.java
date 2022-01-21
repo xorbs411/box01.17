@@ -2,14 +2,14 @@ package exception.dat0120;
 
 public class ThrowsEx1 {
 	
-	public void cutString(String str) throws ArrayIndexOutOfBoundsException{
+	public void cutString(String str) {
 		String s = str.substring(0, 1);
 		printGugudan(s);
 		
 		
 	}
 	
-	public void printGugudan(String s) throws ArrayIndexOutOfBoundsException {
+	public void printGugudan(String s)  {
 		int dan = Integer.parseInt(s);
 		for(int i =0; i<10; i++) {
 			System.out.printf("%d*%d =%d\n", dan,i,(dan*1));
