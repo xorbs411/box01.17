@@ -1,0 +1,199 @@
+﻿데이터베이스 : 데이터 저장
+
+CRUD : 삽입(insert), 조회(select), 수정(update),삭제(delete)
+
+
+테이블,릴레이션 - 컬럼, attribute(속성)
+		   - 레코드, 튜플, row
+	 
+DBMS - oracle, mysql, MSsql, maria...	
+
+계정 생성 - 테이블 생성 - 레코드 삽입
+
+desc 테이블명; -- 컬럼 확인 
+
+select [distinct] 컬럼명 or * 
+from 테이블명
+where 조건
+group by 컬럼명
+having 그룹 조건
+order by 컬럼명 [asc] or desc;
+
+= 같다
+<> , != 다르다
+컬럼명 between 시작 and 끝
+컬럼명 like '패턴' ex) 'S%' 
+and or not
+컬럼명 IN (조건, 조건, 조건)
+is null / is not null
+
+MAX(컬럼명),min, sum, avg, count(*)
+
+
+제약조건
+1. not null - null을 허용하지 않는다.
+2. unique - 중복 값을 허용하지 않는다.
+3. primary key - 기본키. null을 허용하지 않고, 중복 값을 허용하지 않는다.
+4. foreign key - 외래키(참조키) 참조되는 테이블의 컬럼에 값이 존재하면 허용한다.
+				 null값 가능, 중복값 가능
+5. check - 저장 가능한 데이터 값의 범위나 조건을 지정하여 설정한 값만 허용한다. 
+
+gender varchar2(1) CHECK(gender in('M','F'))
+
+>Equi join : 참조관계의 컬럼의 같은 값을 기준으로 조인한다.(inner join)
+select 컬럼... from 테이블1 (별칭), 테이블2 (별칭) ...n 
+where 조인 조건(테이블 수 - 1개) and 조건
+
+-inner join
+select 컬럼명... from 테이블1 (별칭) inner join 테이블2 (별칭)
+on 테이블1.컬럼 = 테이블2.컬럼 where 조건
+
+-using : 두 테이블간의 조인 조건에 사용되는 컬럼명이 같다면 Using 사용 
+select 컬럼명... from 테이블1 (별칭) inner join 테이블2 (별칭)
+Using 컬럼명
+
+-natural join : 조건절을 생략하고 자동적으로 공통 컬럼을 찾아 내부적으로 조인문 생성
+select 컬럼명.. from 테이블1 (별칭) NATURAL JOIN 테이블2 (별칭);
+
+
+>Non Equi join : 참조관계의 컬럼없이 다른 조건을 사용해 조인한다.
+select * from emp e, salgrade s 
+where e.sal between s.losal and s.hisal;
+
+
+>Outer join : 조인 조건에 만족하지 않는 행도 나타낸다.
+select 컬럼... from 테이블1 (별칭) left/right/full outer join 테이블2 (별칭)
+on 조인 조건;
+select 컬럼... from 테이블1 (별칭), 테이블2 (별칭) 
+where 테이블1.컬럼 = 테이블2.컬럼(+); -- (+)는 레코드가 부족한 컬럼명 뒤에 붙인다.
+ 
+select * from customer c , orders o where c.custid = o.custid(+);
+
+Self Join : 한 테이블 내에서 조인한다.(하나의 테이블을 두개처럼 만들어 사용)
+
+서브쿼리의 결과가 여러줄일때
+IN : 서브쿼리의 결과 중에 하나라도 일치하면 참 (=)
+ANY : 하나 이상이 일치하면 참
+ALL : 서브쿼리 검색 결과와 모든 값이 일치하면 참
+
+급여를 3000이상 받는 사원이 소속된 부서와 동일한 부서에서 근무하는 사원을 출력하자
+select ename, sal, deptno from emp where deptno in
+(select deptno from emp where sal >= 3000)
+
+
+30번 소속 사원들 중에서 급여를 가장 많이 받는 사원보다 더 많은 급여를 받는 사원의 이름, 급여를 출력하자
+(30번 부서 사원들의 급여들 모두에 대해서 커야함)
+select ename, sal from emp where sal > 
+(select max(sal) from emp where deptno = 30);
+
+select ename, sal from emp where sal > ALL
+(select sal from emp where deptno = 30);
+
+30번 소속 사원들의 급여 중 가장 작은 값보다 많은 급여를 받는 사원의 이름, 급여를 출력하자
+select ename, sal from emp where sal > 
+(select min(sal) from emp where deptno= 30);
+
+select ename, sal from emp where sal > ANY
+(select sal from emp where deptno = 30);
+
+
+create table 테이블이름(
+컬럼명1 타입 제약조건,
+컬럼명2 타입 제약조건, 
+컬럼명3 타입 제약조건,
+제약조건
+);
+not null제약조건은 항상 컬럼선언시 붙인다.
+
+char(size) : 2000byte
+varchar2(size) :최대 4000byte 가변길이 문자열 저장 가능
+number(전체 길이, 소수점 이하 자리수)
+date
+long : 가변길이의 문자형 데이터 타입. 최대 크기는 2GB
+		하나의 테이블에서 오직 한번만 사용할 수 있으며
+		where절, group by절, order by 절에서 사용할 수 없으며
+		select절에서 distinct와 같이 사용할 수 없다.
+BLOB/CLOB : 가변 길이의 바이너리 데이터를 저장. 파일을 저장할때 사용
+		BLOB - byte배열로 저장 
+		CLOb - char배열로 저장
+rowid : 데이터베이스에서 데이터마다의 주소를 의미
+
+컬럼 추가(alter-add)
+alter table 테이블명 add(추가할 컬럼명과 타입);
+--레코드가 하나라도 있으면 not null을 쓸 수 없다. 
+ 
+컬럼명 수정(alter-rename) 
+alter table 테이블명 rename column 컬럼명 to 수정할 이름;
+
+컬럼데이터 타입 수정 (alter-modify)
+alter table 테이블명 modify (컬럼명 타입);
+ 
+컬럼 삭제(alter-drop) 
+alter table 테이블명 drop column 컬럼명;
+  
+
+insert into 테이블명 (컬럼리스트) values (값);
+insert into 테이블명  values (값);
+insert into 테이블명 select * from 테이블명;
+
+값에 null을 저장해야하는 경우 컬럼리스트에서 생략 or '', null을 저장
+
+insert into (bookid,bookname) values(100,'test');
+
+update 테이블명 set 컬럼명 = 수정할 값 where 조건;
+update 테이블명 set 컬럼명 = (select문) where 조건;
+update 테이블명 set (컬럼명1,컬럼명2...) = (select문) where 조건;
+
+
+delete from 테이블명 where 조건;
+
+트랜잭션
+-하나의 작업(최소단위)에 사용되는 
+insert/update/delete문을 묶어둠
+
+트랜잭션이 실행 중 -> 임시 파일로 미리 실행
+문제 없음 -> commit; DB에 영구 저장
+문제(error) 발생 -> rollback; -> 실행한 내용 전부 취소
+							(트랜잭션 시작 시점으로 돌아감)
+							
+트랜잭션 시작 지점 : 마지막 commit을 한 지점
+							
+auto commit 	
+1. DDL,DCL문이 수행된 경우 (create, alter, drop..)
+2. 연결이 정상적으로 종료된 경우
+		
+-정전이 발생했거나 컴퓨터 다운시 자동으로 rollback된다.
+
+-여러 경로로 접속 -> 각각의 세션이 생성(트랜잭션)
+트랜잭션이 실행 중인 테이블은 락이 걸린다. 
+-트랜잭션이 끝나기 전까지 다른 트랜잭션은 해당 테이블에 접근 할 수 없다.
+insert/update/delete할 수 없다.
+
+트랜잭션의 특징
+
+
+시퀀스 : 번호 생성기(중복값을 피하기 위해서 사용)
+		
+create sequence 시퀀스명
+    [increment by 증가값]
+    [start with 시작값]
+    [MAXVALUE 최대값]
+    [MINVALUE 최소값]
+    [cycle|nocycle]
+    [cache n|nocache];
+
+select * from user_sequences;
+
+시퀀스명.nextval : 증가된 시퀀스 번호를 가져온다.
+insert into dept_seq_test
+values(seq_deptno.nextval,'DATABASE','SEOUL');
+
+시퀀스명.currval : 현재 시퀀스 번호 가져온다.
+select seq_deptno.currval from dual;
+
+시퀀스 수정
+alter sequence 시퀀스명
+    옵션;
+
+시퀀스 삭제
+drop sequence 시퀀스명;   
