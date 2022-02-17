@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+		.container {
+			width:600px;
+			margin:0 auto;
+		}
+		ul { /* 순서없는 목록에 적용할 스타일 */
+			list-style-type: none; /* 불릿 없앰 */
+		}
+
+		label.title { /* class=title인 label에 적용할 스타일 */
+			font-weight: bold; /* 굵은 글자 */
+			width: 80px; /* 너비 80px */
+			float: left; /* 왼쪽부터 배치 */
+		}
+
+		div.centered { /* class=centered인 div에 적용할 스타일 */
+			text-align: center; /* 가운데 정렬 */
+		}
+
+		fieldset { /* 필드셋에 적용할 스타일*/
+			margin: 15px 10px; /* 상하 마진 15xp, 좌우 마진 10px */
+		}
+
+			fieldset legend { /* 필드셋의 제목 */
+				font-weight: bold; /* 굵은 글자 */
+				font-size: 18px; /* 글자 크기 18px */
+				color: purple; /* 글자색 자주 */
+			}
+
+		ul li { /* 목록의 각 항목 */
+			margin-bottom: 10px; /* 아래 마진 10px */
+		}
+	</style>	
+</head>
+<body>
+<h1>상품 주문서</h1>
+<fieldset>
+<legend>개인 정보</legend>
+
+<label for="name">이름</label>
+<input type="text" name="name" id="name" placeholder="여백없이 입력"></input>
+<br>
+<label for="pone">연락처</label>
+<input type="number" name="Phon" id="phone" placeholder="연락가능한 번호">
+</fieldset>
+
+ <fieldset>
+ <legend>배송지 정보</legend>
+ <label for="address">주소</label>
+ <input type="text" id="address" name="address">
+ <br>
+  <label for="phone">전화번호</label>
+ <input type="text" id="phone" name="phone">
+ <br>
+  <label for="memo">메모</label>
+ <input type="textarea" id="memo" name="memo">
+ 
+ </fieldset>
+
+
+
+</body>
+</html>
