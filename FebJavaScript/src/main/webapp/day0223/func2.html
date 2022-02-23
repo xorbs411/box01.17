@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<p id = "target1"></p>
+<p id = "target2"></p>
+<script>
+   let user ="john"
+  function showMessge(name,position){
+	  document.querySelector("#target1").innerHTML
+	  =name+" "+ position+"님 안녕하세요.";
+  }
+  showMessge("킴", "부장");
+
+  function showMessge2(id,name,position="사원"){
+	  let pid = "#"+id;
+	  document.querySelector(pid).innerHTML
+	  =name+" "+ position+"님 안녕하세요.";
+  }
+  showMessge2("target2","킴");
+</script>
+</body>
+</html>

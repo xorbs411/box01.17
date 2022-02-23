@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="form1" onsubmit="return checkVal()">
+		아이디 : <input type="text" name="id" id="id"> 
+		<input type="submit" value="전송">
+	</form>
+	<script>
+		function checkVal() {
+			let id = document.form1.id;
+
+			if (!id.value) {
+				alert("id 값을 입력해야 합니다.")
+			} else {
+				alert("입력한 id 값 : " + id.value);
+			}
+
+			return false;// 더이상 submit을 진행하지 않는다.
+		}
+	</script>
+
+</body>
+</html>

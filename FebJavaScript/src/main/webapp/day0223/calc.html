@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>입력한 두 수 더하기</title>
+</head>
+<body>
+
+<form>
+  첫번째 숫자: <input id ="num1" placeholder="숫자 입력">
+  두번째 숫자: <input id ="num2" placeholder="숫자 입력">
+<input type ="button" value="더하기" onclick="add()">
+</form>
+     <p id="result"></p>
+<script>
+   function add(){
+	   let value1= document.querySelector("#num1").value;
+	   let value2= document.getElementById("num2").value;
+	   
+	   console.log(typeof value1);
+	   console.log(typeof value2);
+	   
+	   let result =Number(value1)+ parseInt(value2);
+	   document.querySelector("#result").innerHTML =result;
+   }
+   
+
+</script>
+
+</body>
+</html>
