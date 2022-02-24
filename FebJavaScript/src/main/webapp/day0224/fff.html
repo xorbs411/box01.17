@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+//parent() 함수 정의
+function parent() { let name = '자바'; let age = 20;
+
+// child() 함수 정의
+   function child() { let name = '스크립트'; 
+       console.log(name); console.log(age); }
+   // parent()함수에서 childe()함수 호출 
+ child();  return name+age;}
+parent();
+document.write(parent());
+
+
+
+//child();
+
+
+</script>
+
+</body>
+</html>

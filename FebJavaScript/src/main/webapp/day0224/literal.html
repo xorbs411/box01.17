@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		let user = {
+				name:"jane", 
+				age:30, 
+				hello:function(){
+					alert("Hello, I`m"+this.name)
+				},
+		        friend : {name: "jone",
+		        	       gender:"man"
+		        
+		        }
+		};
+		user.hello();
+		document.write(typeof user);
+		document.write("<br>");
+		document.write("<br>");
+		document.write(user["name"]);
+		document.write("<br>");
+		document.write(user.name);
+		document.write("<br>");
+		let n ="name";
+		document.write(user[n]);
+		document.write("<br>");
+		document.write(user["friend"]["name"]);
+		document.write("<br>");
+		document.write("<br>");
+		user.name="javakim";
+		document.write(user.name);
+		user.id="xorbs41";
+		document.write(user.id);
+		
+		delete user.age;
+		document.write(user.age);
+		document.write("<br>");
+		document.write(user);
+
+		
+		
+		
+
+	
+		
+		
+	</script>
+
+</body>
+</html>

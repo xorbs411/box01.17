@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 화살표 함수 -->
+	<script>
+   //let func =(매개변수...) => 동작;
+  let sum = (a,b) => a+b;
+  document.write(sum(10,20));
+  document.write("<br>");
+  
+  let db =n => n*2;  // 매개변수가 하나라면 ()생략
+  document.write(db(5));
+  document.write("<br>");
+  
+  let show =() => alert("message");// 매개변수가 하나도 없으면 ()생략불가
+  show();
+  
+  let oper = (a,b) => {document.write(a+b+"<br>");
+  document.write(a-b+"<br>");
+  document.write(a*b+"<br>");
+  document.write(a/b+"<br>");
+  }; //여러줄일 경우 중괄호를 쓴다.
+  oper(10,5);  
+</script>
+</body>
+</html>

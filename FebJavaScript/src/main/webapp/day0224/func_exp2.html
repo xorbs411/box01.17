@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+  function sayHi1(){
+	  alert("hi");
+  }
+  let sayHi2 = function say(){
+	  alert("hi2");
+	  return "hi2"; //return이 없으면 undefined
+  }
+  //alert(sayHi2); //error
+  alert(sayHi1);
+  alert(sayHi2);
+  alert(sayHi2());
+   
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+function Calculator() {
+	this.read = function(){
+		this.a = parseInt(prompt('a값 입력',0));
+		this.b = +prompt('b값 입력',0);
+	};
+	this.sum = () => this.a + this.b;
+	this.mul = function() {return this.a * this.b; };
+}
+
+let calc = new Calculator();
+calc.read();
+document.write("Sum : "+calc.sum()+"<br>");
+document.write("Mul : "+calc.mul()+"<br>");
+
+</script>
+
+</body>
+</html>

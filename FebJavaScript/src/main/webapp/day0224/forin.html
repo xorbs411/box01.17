@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		let user = {
+			name : "scott",
+			age : "20",
+			password : "tiger"
+
+		};
+
+		for (key in user) {
+			document.write(key + " : " + user[key] + "<br>");
+		}
+		let fruit = {
+			3 : "mango",
+			1 : "apple",
+			2 : "tomato"
+
+		};
+		
+		if(3 in fruit){//in : 프로퍼티 유무 체크
+			document.write(fruit['3]);
+			document.write("<br>");
+			
+		}
+
+		for (key in fruit) {
+			document.write(key + " : " + fruit[key] + "<br>");
+		}
+
+		let code = {
+			"+82" : '대한민국',
+			"+81" : "일본",
+			"+1" : "미국",
+			"+7" : "러시아"
+		};
+		for (key in code) {
+			document.write(key + " : " + code[key] + "<br>");
+		}
+	</script>
+
+</body>
+</html>

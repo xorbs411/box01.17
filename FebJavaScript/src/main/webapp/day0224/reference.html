@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		let message = "hello";
+		let copy = message;//값이 복사
+
+		document.write("message : " + message + "<br>");
+		document.write("copy : " + copy + "<br>");
+
+		message = "byebye!";
+		document.write("message : " + message + "<br>");
+		document.write("copy : " + copy + "<br>");
+
+		let user = {name : "jin"};
+		let admin = user;// 객체는 복사되지 않는다(참조값을 복사한다.)
+		document.write("admin.name" + admin.name);
+		document.write("<br>");
+
+		user.name = "Anna";
+		document.write("admin.name" + admin.name);
+		document.write("<br>");
+		document.write("user.name" + user.name);
+	</script>
+
+</body>
+</html>

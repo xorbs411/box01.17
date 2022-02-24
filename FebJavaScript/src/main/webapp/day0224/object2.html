@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+    function User(name){ㅍ  
+    	//this ={};
+    	this.name =name;
+    	/*  
+    	this.getName = function(){return this.name;}
+    	this.setName = function(n){this.name=n;}*/
+	
+    	
+    	
+    }
+    User.prototype.getName = function(){return this.name};
+    User.prototype.setName = function(n){ this.name =n};
+    
+    
+     let user1 = new User("jskim");
+     document.write(user1.getName()+"<br>");
+     
+     user1.setName("jin");
+     document.write(user1.getName()+"<br>");
+     
+     let user2= new User("자바킴");
+     document.write(user2.getName()+"<br>");
+     
+     
+   
+   
+
+
+</script>
+
+</body>
+</html>

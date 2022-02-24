@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+	    "use strict";
+	    //strick 모드로 설정. "보안" 자바스크립트를 작성,
+	    //"올바르지 않은 문법" 을 사전에 검출
+ 		let age = 10;
+		let welcome;
+		
+	    if (age < 19) {
+			//welcome();
+			welcome = function () {
+				alert('안녕');
+			}
+		} else {
+			welcome = function () {
+				alert("안녕하세요");
+			}
+			//welcome();
+		}
+		
+		welcome();//중괄호 영역에 선언된 함수는 선언된 영역에서만 사용할 수 있다.
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+    //function이름 : checkAge
+    //parameter: age
+    //기능 : age 18세 이상이면 true리턴
+    //      아니면 false 리턴
+    // prompt창으로 나이를 입력받은 후
+    // 입력한 나이로  checkAge함수 호출
+    // 리턴값이 true면 접속허용 출력
+    // 리ㅇ턴값이 false면  접속차단 출력
+ function checkAge (age){
+    	
+    	if(age >= 18){
+    		     return true;
+    	}else{
+    		return false;
+    		
+    	}
+    }
+    let age =prompt("나이를 입력하세요", 18);
+    let result =checkAge(age);
+    if(result){
+    	     document.write('접속 허용');
+    	     
+    }else{
+    	 document.write('접속 차단');
+    }
+    
+    
+</script>
+
+</body>
+</html>

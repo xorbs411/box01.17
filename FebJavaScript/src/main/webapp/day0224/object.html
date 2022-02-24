@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>생성자로 객체 생성</title>
+</head>
+<body>
+<script>
+    function User(name){
+    	//this ={};
+    	this.name =name;
+    	this.getName = function(){return this.name;}
+    	this.setName = function(n){this.name=n;}
+    	
+    	
+    }//여러가지 중복 값을 구할때 쓰면 편하게 만들수있다
+     let user1 =new User("javakim");
+     document.write(user1.getName());
+     user1.setName("jin");
+     document.write(user1.getName());
+   
+     let user1 =new User();
+   
+
+
+</script>
+
+</body>
+</html>
