@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>날짜 차이 더하기 뺴기</title>
+</head>
+<body>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+	<script>
+		//add (숫자, "단위")
+		//subtract(숫자,"단위")
+		document.write(moment().add(7, 'days').format('YYYY-MM-DD')+"<br>");
+		document.write(moment().add(7, 'days').add(1, 'months').format(
+				'YYYY-MM-DD')+"<br>");
+		document.write(moment().add(7, 'years').format('YYYY-MM-DD')+"<br>");
+		document.write(moment().add({days:7,months:1}).format('YYYY-MM-DD')+"<br>");
+		//
+		document.write(moment().subtract(7, 'days').format('YYYY-MM-DD')+"<br>");
+		document.write("<br>");
+
+		//diff() : 날짜.시간차(ms)
+
+let b =moment ("20220101","YYYYMMDD");
+let a =moment();
+
+document.write(a.diff(b)+"<br>");
+document.write(a.diff(b, "days")+"<br>");
+document.write(a.diff(b, "months")+"<br>");
+
+
+		
+		
+		
+	</script>
+
+
+</body>
+</html>

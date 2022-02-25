@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<p id="t1"></p>
+<p id="t2"></p>
+<p id="t3"></p>
+<p id="t4"></p>
+<p id="t5"></p>
+<p id="t6"></p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script>
+
+  let f1 =moment ("20120215","YYYYMMDD").fromNow();
+  document.querySelector("#t1").innerHTML
+     =f1;
+   document.querySelector("#t2").innerHTML
+   = moment("20220515","YYYYMMDD").fromNow();
+   
+//startOF() : 현재시간을 기준으로 경과한 시간(반올림)
+// endOF() : 현재 시간을 기준으로 남은 시간
+   
+   document.querySelector("#t3").innerHTML
+   =moment().startOf('day').fromNow();
+   document.querySelector("#t4").innerHTML
+   =moment().endOf('day').fromNow();
+   document.querySelector("#t5").innerHTML
+   =moment().startOf('hour').fromNow();
+   document.querySelector("#t6").innerHTML
+   =moment().endOf('hour').fromNow();     
+
+</script>
+</body>
+</html>

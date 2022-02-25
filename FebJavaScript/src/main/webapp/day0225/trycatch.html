@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+
+
+<script>
+ 	let solution = 77;
+ 	function test(){
+ 		let x = document.getElementById("number").value;
+		try{
+ 		if(x == "") throw "입력한 값 없음";		
+ 		if(isNaN(x)) throw "숫자가 아님";
+ 		if(x > solution) throw "너무 큼";
+ 		if(x < solution) throw "너무 작음";
+ 		if(x == solution) throw "성공";
+ 		
+		}catch (e) {
+			let y = document.getElementById("message");
+			y.innerHTML = "힌트 : "+e;
+		}
+ 	}
+ 
+ </script>	
+
+</body>
+</html>
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ <script>
+   //car 객체 생성
+   let Car ={
+		   speed :0,
+		   model :'audi A4',
+		   color : "white",
+		   accel : function(){this.speed +=10;},
+		   brake : function(){this.speed -=10;}
+   };
+   Car.accel();
+   Car.accel();
+   document.write(Car.speed+"<br>");
+   
+   for(name in Car){
+	   document.write(Car[name]+"<br>");
+
+	    
+   }
+  
+ </script>
+
+</body>
+</html>

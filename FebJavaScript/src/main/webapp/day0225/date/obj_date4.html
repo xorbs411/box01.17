@@ -1,0 +1,13 @@
+<div id='clock'></div>
+
+<script>
+    function setClock() {
+        var now = new Date();
+        var s = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
+        document.getElementById('clock').innerHTML = s;
+        setTimeout('setClock()', 1000);
+        //지정한 시간(ms)가 지나면 함수 호출(재귀호출 사용중)
+
+    }
+    setClock();
+</script>

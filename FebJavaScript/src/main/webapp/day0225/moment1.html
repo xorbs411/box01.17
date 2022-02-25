@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div id="target1"></div>
+<div id="target2"></div>
+<div id="target3"></div>
+<div id="target4"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script>
+//momnet() : momet 인스턴스 생성  
+//format() : momnet 인스턴스의 날짜/시간 출력 형태를 변경할 떄 사용.  
+  moment.locale('en');
+  document.getElementById("target1").innerHTML
+                         =moment().format();
+  let t1 =moment('2002-02-15');
+  document.getElementById("target2").innerHTML = t1.format();
+  
+  let t2 =moment('22-02-2022','DD-MM-YYYY');
+  document.getElementById("target3").innerHTML = t2.format();
+  
+ 
+  
+
+
+</script>
+</body>
+</html>
