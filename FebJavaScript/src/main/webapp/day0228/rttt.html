@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+const jsObj = [{name:'admin1', region:'서울', age:10},
+				{name:'member1', region:'제주', age:20}];
+let outputA	= JSON.stringify(jsObj);
+let outputB	= JSON.stringify(jsObj, null, 1);
+
+document.write(typeof outputA +"<br>");
+document.write(outputA+"<br>");
+document.write(outputB+"<br>");
+document.write('---------------------<br>');
+
+let outputC = JSON.parse(outputA);
+outputC.forEach(function(elt, i) {
+	for(person in elt){
+		document.write(elt[person]);
+		document.write("<br>");
+	}
+})
+
+</script>
+
+</body>
+</html>

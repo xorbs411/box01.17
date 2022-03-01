@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<form>
+		<input id="value" name="id" type="text"> 
+		<input type="button"
+			value="종료" onclick="win_close()">
+	</form>
+	
+	<script type="text/javascript">
+	function win_close(){
+		var val = document.querySelector("#value").value;
+		opener.document.querySelector("#value").innerHTML= val;
+		self.close();
+	}
+</script>
+</body>
+</html>

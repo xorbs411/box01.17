@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script >
+	function beforeSubmit() {
+		return confirm("데이타를 정말로 보낼까요?")
+	}
+</script>
+</head>
+<body>
+	<form name="myform" action="save.asp" 
+	onSubmit="return beforeSubmit()">
+		이름 : <input type="text" name="irum">
+		<input type="submit">
+	</form>
+</BODY>
+</html>

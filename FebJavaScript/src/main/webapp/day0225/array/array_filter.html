@@ -1,10 +1,10 @@
    <script>
        var numbers = [10, 20, 30, 40, 50];
-       //필터의 기준
+       //필터의 기준 true/false리턴
        function isBigEnough(element, index, array) {
            return (element >= 30);
-       }
-
+        }
+        //filter(콜백함수) 콕백함수에서 true를 리턴하는 것으로만 새로운 배열을 만든다.  
        var filtered = numbers.filter(isBigEnough);
        document.write("필터링 된 배열: " + filtered);
     </script>

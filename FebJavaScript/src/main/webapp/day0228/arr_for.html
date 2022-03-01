@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+  let arr =['apple', 'banana', 'cherry'];
+  document.write(arr+"<br>");
+  
+  for(f in arr){//in 배열 ->이름이 아닌 인덱스 저장
+	  document.write(f+" : "+arr[f]+"<br>");}
+  document.write("---------------"+"<br>");
+  //Array.forEach(콜백함수)
+  //Array.forEach((item, index)=>{})
+  arr.forEach((item,index)=>{
+	  document.write(index+" : "+ item+"<br>");
+  })
+  
+  
+  
+	  
+  </script>
+</body>
+</html>
