@@ -1,0 +1,26 @@
+<html>
+<HEAD>
+<SCRIPT>
+	function findSelected(form) {
+		for (var i = 0; i < form.drive.length; i++) {
+			if (form.drive[i].checked == true) {
+				alert(form.drive[i].value + " 드라이브가 선택되었습니다.")
+				break;
+			}
+		}
+	}
+</SCRIPT>
+</HEAD>
+<BODY>
+	<FORM ACTION="nothingcgi">
+		<H1>드라이브 선택</H1>
+		<P>
+			<INPUT TYPE="radio" NAME="drive" VALUE="A" CHECKED> A 드라이브<BR>
+			<INPUT TYPE="radio" NAME="drive" VALUE="B"> B 드라이브<BR> <INPUT
+				TYPE="radio" NAME="drive" VALUE="C"> C 드라이브<BR> <INPUT
+				TYPE="radio" NAME="drive" VALUE="D"> D 드라이브
+		<P>
+			<INPUT TYPE="button" VALUE="Check" onClick="findSelected(this.form)">
+	</FORM>
+</BODY>
+</html>
